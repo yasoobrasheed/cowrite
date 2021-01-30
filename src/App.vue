@@ -2,10 +2,18 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/about">
-        Account
+        | Home |
+      </router-link>
+      
+      <router-link to="/account">
+        | Account |
+      </router-link>
+      
+      <router-link
+        v-if="$auth.isAuthenticated"
+        to="/profile"
+      >
+        | Profile |
       </router-link>
     </div>
     <router-view />
